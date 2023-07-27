@@ -1,7 +1,7 @@
 # AHN4 Download Script
 
-This script allows for automated downloading of AHN4 files based on the geographical extent of a shapefile.
-Unfortunally PDOK only gives the oppertuntiy to download for AHN4 the 05m_dtm and 05m_dsm (so 0,5 m).
+This Python script allows for the automated downloading of AHN4 files based on the geographical extent of a shapefile.
+Unfortunately, PDOK only allows the download for AHN4 the 05m_dtm and 05m_dsm (so 0,5 m).
 
 ## Usage
 
@@ -14,7 +14,7 @@ Unfortunally PDOK only gives the oppertuntiy to download for AHN4 the 05m_dtm an
 
 ## Prerequisites
 
-This script is designed to be run with Python 3 and does not require any additional libraries beyond the Python Standard Library.
+This script is designed to be run with Python 3 and does not require additional libraries beyond the Python Standard Library.
 
 ## How to Run
 
