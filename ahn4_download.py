@@ -4256,17 +4256,25 @@ def main():
     #choose what to download. there are 5 choices "05m_dsm", "05m_dtm", "5m_dsm", "5m_dtm", "laz"
     user_choice = get_user_choice()
     print("You chose:", user_choice)
+    
 
-    #so now we have a list with 'bladindexes' we want to download. And we know what - out of the five choices to download
+    # Get the current working directory
+    current_dir = os.getcwd()
+
     for bladindex in overlapping_bladindexes:
         for item in list_urls:
             if item['type'] == user_choice and item['bladindex'] == bladindex:
                 print("Match found: (please be patient, download might take a while)", item['URL'])
-                # Make a request to the URL
                 response = requests.get(item['URL'])
 
-                # Save the content to a file
-                with open(bladindex + '.zip', 'wb') as f:
+                # Get the file name from the URL
+                filename = item['URL'].split('/')[-1]
+
+                # Create the full file path
+                file_path = os.path.join(current_dir, filename)
+
+                # Download and write the file
+                with open(file_path, 'wb') as f:
                     f.write(response.content)
 
 if __name__ == "__main__":
